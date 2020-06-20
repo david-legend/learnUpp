@@ -1,6 +1,8 @@
 part of values;
 
 class Sizes {
+  static const double HEIGHT_OF_BOTTOM_NAV_BAR = 64.0;
+  static const double SAFE_AREA_MARGIN = 24.0;
   static const double SIZE_120 = 120.0;
   static const double SIZE_60 = 60.0;
   static const double SIZE_48 = 48.0;
@@ -15,7 +17,6 @@ class Sizes {
   static const double SIZE_2 = 2.0;
   static const double SIZE_1 = 1.0;
   static const double SIZE_0 = 0.0;
-
 
   //TextSizes
   static const double TEXT_SIZE_96 = 96.0;
