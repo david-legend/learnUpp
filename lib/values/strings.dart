@@ -4,7 +4,7 @@ class StringConst {
   //strings
   static const String APP_NAME = "LearnUpp";
 
-  static const String GREET_USER = "Hi,";
+  static const String GREET_USER = "Hi, ";
   static const String WELCOME_MESSAGE = "Welcome to learning made easy";
   static const String USER_NAME = "Helen";
   static const String CATEGORIES = "Categories";

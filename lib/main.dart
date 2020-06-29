@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: StringConst.APP_NAME,
+      debugShowCheckedModeBanner: false,
       theme: AppTheme.lightThemeData,
       home: Container(),
       builder: ExtendedNavigator<Router>(

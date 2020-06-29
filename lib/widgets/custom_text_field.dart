@@ -17,13 +17,17 @@ class CustomTextField extends StatelessWidget {
   final Color fillColor;
   final bool filled;
   final bool obscured;
-  final bool autocorrect;
+  final bool autoCorrect;
   final bool hasTitle;
   final bool hasSuffixIcon;
+  final bool hasPrefixIcon;
   final IconData suffixIcon;
+  final IconData prefixIcon;
   final Color suffixIconColor;
+  final Color prefixIconColor;
   final Color suffixIconBackgroundColor;
   final GestureTapCallback onTapSuffixIcon;
+  final GestureTapCallback onTapPrefixIcon;
   final GestureTapCallback onTap;
   final TextInputType textInputType;
   final FormFieldValidator<String> validator;
@@ -36,12 +40,16 @@ class CustomTextField extends StatelessWidget {
   CustomTextField({
     this.controller,
     this.hasSuffixIcon = false,
-    this.autocorrect = false,
+    this.autoCorrect = false,
     this.suffixIcon = FeatherIcons.search,
     this.onTapSuffixIcon,
     this.onTap,
     this.suffixIconBackgroundColor = AppColors.primaryColor,
     this.suffixIconColor = AppColors.primaryText,
+    this.prefixIcon,
+    this.onTapPrefixIcon,
+    this.prefixIconColor,
+    this.hasPrefixIcon,
     this.textInputType = TextInputType.text,
     this.textFormFieldStyle,
     this.fieldTitleTextStyle,
@@ -78,13 +86,28 @@ class CustomTextField extends StatelessWidget {
             validator: validator,
             initialValue: initialValue,
             onTap: onTap,
-            autocorrect: autocorrect,
+            autocorrect: autoCorrect,
             autovalidate: true,
             maxLines: maxLines,
             decoration: InputDecoration(
               border: border,
               enabledBorder: enabledBorder,
               focusedBorder: focusedBorder,
+              prefixIcon: hasPrefixIcon
+                  ? InkWell(
+                      onTap: onTapPrefixIcon,
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: Sizes.PADDING_4,
+                          vertical: Sizes.PADDING_4,
+                        ),
+                        child: Icon(
+                          prefixIcon,
+                          color: prefixIconColor,
+                        ),
+                      ),
+                    )
+                  : null,
               suffixIcon: hasSuffixIcon
                   ? InkWell(
                       onTap: onTapSuffixIcon,

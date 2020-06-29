@@ -2,6 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:learnupp/values/values.dart';
 
 class CurvedBackground extends StatelessWidget {
+  CurvedBackground({
+    this.color = AppColors.white,
+    this.child,
+    this.borderRadius = const BorderRadius.only(
+      topLeft: Radius.circular(Sizes.RADIUS_40),
+      topRight: Radius.circular(Sizes.RADIUS_40),
+    ),
+    this.padding = const EdgeInsets.only(
+      left: Sizes.PADDING_16,
+      top: Sizes.PADDING_0,
+    ),
+    this.margin,
+    this.width,
+    this.height,
+    this.physics,
+    this.controller,
+  });
+
   final Color color;
   final Widget child;
   final EdgeInsetsGeometry padding;
@@ -11,22 +29,6 @@ class CurvedBackground extends StatelessWidget {
   final double height;
   final ScrollPhysics physics;
   final ScrollController controller;
-
-  CurvedBackground({
-    this.color = AppColors.white,
-    this.child,
-    this.borderRadius = const BorderRadius.only(
-      topLeft: Radius.circular(Sizes.RADIUS_40),
-      topRight: Radius.circular(Sizes.RADIUS_0),
-    ),
-    this.padding =
-        const EdgeInsets.only(left: Sizes.PADDING_16, top: Sizes.PADDING_16),
-    this.margin,
-    this.width,
-    this.height,
-    this.physics,
-    this.controller,
-  });
 
   @override
   Widget build(BuildContext context) {

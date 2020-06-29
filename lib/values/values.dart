@@ -10,5 +10,6 @@ part 'images.dart';
 part 'sizes.dart';
 part 'strings.dart';
 part 'styles.dart';
+part 'data.dart';
 part 'gradients.dart';
 part 'decoration.dart';
